@@ -3,7 +3,7 @@ import "./FormComponent.css";
 
 type FormComponentProps = {
   name: string;
-  onSubmit?: () => void;
+  onSubmit?: (e: { preventDefault: () => void }) => void;
   children: React.ReactNode;
 };
 

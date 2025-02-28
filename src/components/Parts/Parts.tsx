@@ -1,5 +1,3 @@
-import React from "react";
-
 function Parts() {
   return <div>Parts</div>;
 }
