@@ -1,0 +1,19 @@
+.search-btn {
+  padding: 0.4rem 0.4rem 0.6rem;
+  font-family: "Arsenal SC", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  width: 6rem;
+  height: 2.6rem;
+  border: none;
+  background-color: #008080;
+  border-radius: 0.6rem;
+  color: #efefef;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  transition: 0.3s ease-in-out;
+  background-color: #004b4b;
+}

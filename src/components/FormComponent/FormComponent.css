@@ -1,0 +1,16 @@
+.form {
+  margin: 0;
+  padding: 0;
+  /* min-width: 400px; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.form__btn {
+  margin: 2rem 0 0 auto;
+}
+
+.form_type_make-model {
+  width: 100%;
+}
