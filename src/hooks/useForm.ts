@@ -2,7 +2,8 @@ import { useState } from "react";
 
 type useFormProps = {
   make?: string;
-  model?: string;
+  manufacturer?: string;
+  vehicleType?: string;
   search?: string;
 };
 

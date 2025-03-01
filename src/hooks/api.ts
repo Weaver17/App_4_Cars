@@ -1,5 +1,5 @@
-import { BASE_URL, handleServerResponse, request } from "../utils/constants";
+import { BASE_URL, request } from "../utils/constants";
 
-export const getMakeAndModelProps = (make, model) => {
-  return request(``);
+export const getModelsOfMake = (make: string) => {
+  return request(`${BASE_URL}/GetModelsForMake/${make}?format=json`);
 };

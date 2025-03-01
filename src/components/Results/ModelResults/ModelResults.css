@@ -1,0 +1,15 @@
+.model-results {
+  padding: 2rem;
+  max-height: 550px;
+  overflow: scroll;
+}
+
+.model-results__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.model-results::-webkit-scrollbar {
+  width: 0;
+}

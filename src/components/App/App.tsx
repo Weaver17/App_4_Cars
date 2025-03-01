@@ -5,6 +5,7 @@ import Main from "../Main/Main";
 import "./App.css";
 import Makes from "../Makes/Makes";
 import Parts from "../Parts/Parts";
+import ModelResults from "../Results/ModelResults/ModelResults";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/makes" element={<Makes />} />
           <Route path="/parts" element={<Parts />} />
+          <Route path="/results/:make" element={<ModelResults />} />
         </Routes>
       </main>
       <Footer />
