@@ -1,0 +1,33 @@
+.type-card {
+  padding: 1rem 2rem;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff99;
+  border: 1px solid #008080;
+  border-radius: 8px;
+  box-shadow: 4px 4px 4px #00000025;
+}
+
+.type-card__link {
+  padding-bottom: 0.4rem;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  border-bottom: 1px solid #02b0b0;
+}
+
+.type-card__type {
+  font-size: 14px;
+  color: #00000075;
+}
+
+.type-card__link:hover {
+  color: #008080;
+  transition: 0.3s ease-in-out;
+}

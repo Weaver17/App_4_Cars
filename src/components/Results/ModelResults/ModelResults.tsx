@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ModelCard from "../ModelCard/ModelCard";
+import ModelCard from "../Cards/ModelCard/ModelCard";
 
 import "./ModelResults.css";
 

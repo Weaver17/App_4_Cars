@@ -51,6 +51,7 @@ export const manufacturers = [
 ];
 
 export const vehicleType = [
+  "Select Vehicle Type",
   "Vehicle",
   "Car",
   "Truck",

@@ -1,6 +1,6 @@
 import { SetStateAction } from "react";
 import { useNavigate } from "react-router-dom";
-import { getModelsOfMake } from "../../../hooks/api";
+import { getModelsOfMake } from "../../../utils/api";
 import { useForm } from "../../../hooks/useForm";
 import { makes } from "../../../utils/constants";
 import FormComponent from "../../FormComponent/FormComponent";
@@ -28,7 +28,7 @@ function MnMSearch() {
         })
         .catch(console.error)
         .finally(() => {
-          navigate(`/results/${values.make?.toLowerCase()}`);
+          navigate(`/results/make/${values.make?.toLowerCase()}`);
         });
     } else {
       console.error("Unknown Make");

@@ -5,6 +5,8 @@
 }
 
 .model-results__list {
+  margin: 0 auto;
+  max-width: 1131px;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;

@@ -1,5 +1,8 @@
 .page {
-  background-color: #efefef;
+  background: url("../../assets/big-background.jpg") no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: #dddddd99;
   font-family: "Arsenal SC", sans-serif;
   font-size: 16px;
   line-height: 20px;
@@ -12,7 +15,8 @@
   background: url("../../assets/background.svg") no-repeat;
   background-size: contain;
   max-width: 1360px;
-  min-height: 100vh;
+  min-height: 655px;
+  max-height: 100vh;
   margin: 0 auto;
   padding: 0 20px;
 }

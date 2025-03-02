@@ -6,6 +6,7 @@ import "./App.css";
 import Makes from "../Makes/Makes";
 import Parts from "../Parts/Parts";
 import ModelResults from "../Results/ModelResults/ModelResults";
+import TypeResults from "../Results/TypeResults/TypeResults";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/makes" element={<Makes />} />
           <Route path="/parts" element={<Parts />} />
-          <Route path="/results/:make" element={<ModelResults />} />
+          <Route path="/results/make/:make" element={<ModelResults />} />
+          <Route path="/results/type/:vehicletype" element={<TypeResults />} />
         </Routes>
       </main>
       <Footer />
