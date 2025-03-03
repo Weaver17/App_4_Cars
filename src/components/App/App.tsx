@@ -7,6 +7,7 @@ import Makes from "../Makes/Makes";
 import Parts from "../Parts/Parts";
 import ModelResults from "../Results/ModelResults/ModelResults";
 import TypeResults from "../Results/TypeResults/TypeResults";
+import VariablesResults from "../Results/VariablesResults/VariablesResults";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/parts" element={<Parts />} />
           <Route path="/results/make/:make" element={<ModelResults />} />
           <Route path="/results/type/:vehicletype" element={<TypeResults />} />
+          <Route path="/results/variables" element={<VariablesResults />} />
         </Routes>
       </main>
       <Footer />

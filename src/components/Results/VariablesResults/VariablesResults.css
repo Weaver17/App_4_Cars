@@ -1,0 +1,17 @@
+.variables-results {
+  padding: 2rem;
+  max-height: 550px;
+  overflow: scroll;
+}
+
+.variables-results__list {
+  margin: 0 auto;
+  max-width: 1131px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.variables-results::-webkit-scrollbar {
+  width: 0;
+}

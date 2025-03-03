@@ -14,7 +14,9 @@ function TypeBrowse() {
 
   const navigate = useNavigate();
 
-  const onMakeChange = (e: { target: { value: SetStateAction<string> } }) => {
+  const onVehicleTypeChange = (e: {
+    target: { value: SetStateAction<string> };
+  }) => {
     setValues({ vehicleType: e.target.value as string });
   };
 
@@ -23,7 +25,6 @@ function TypeBrowse() {
     if (values.vehicleType) {
       getMakesForType(values.vehicleType.toLowerCase())
         .then((data) => {
-          console.log(data);
           localStorage.setItem(
             "vehicleType",
             JSON.stringify(data.SearchCriteria)
@@ -46,7 +47,7 @@ function TypeBrowse() {
         <FormComponent onSubmit={handleMakesForTypeSubmit} name="type">
           <label className="type__search-box-label">
             <select
-              onChange={onMakeChange}
+              onChange={onVehicleTypeChange}
               className="type__search-box-select"
               name="type"
               id="type"
