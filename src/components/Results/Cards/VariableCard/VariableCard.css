@@ -2,29 +2,19 @@
   padding: 1rem 2rem;
   width: 1000px;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  justify-content: space-between;
   background-color: #efefef;
   border: 1px solid #008080;
   border-radius: 8px;
   box-shadow: 4px 4px 4px #00000025;
 }
 
-.variable-card__name-group {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.2rem;
-}
-
 .variable-card__name {
-  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
 }
 
-.variable-card__group {
+.variable-card__element {
   color: #444;
-}
-
-.variable-card__model {
-  font-size: 20px;
-  margin-left: 3rem;
+  align-self: flex-end;
 }

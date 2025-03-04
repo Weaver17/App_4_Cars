@@ -14,6 +14,12 @@ export const getManufacutrer = (manufacturer: string) => {
   );
 };
 
+export const getOtherSearch = (searchInput: string) => {
+  return request(
+    `${BASE_URL}/GetVehicleVariableValuesList/${searchInput}?format=json`
+  );
+};
+
 export const getSearchVariables = () => {
   return request(`${BASE_URL}/GetVehicleVariableList?format=json`);
 };

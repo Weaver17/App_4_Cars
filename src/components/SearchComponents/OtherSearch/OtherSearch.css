@@ -25,28 +25,38 @@
   justify-content: end;
   align-items: center;
   font-size: 1.2rem;
-  margin-top: 1.6rem;
-  flex-direction: column;
+  margin-left: 20px;
 }
 
-.other__search-box-input {
-  padding: 0.6rem;
+.other__search-box-select {
+  margin: 2rem 0 1.2rem;
+  background: right 4% bottom 50% / contain no-repeat
+    url("../../../assets/Dropdown.svg") #fff;
+  background-size: 20px 20px;
+  padding: 0.6rem 2.4rem 0.6rem 0.6rem;
   width: 250px;
   border: 1px solid #00000050;
   border-radius: 8px;
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  &::-ms-expand {
+    display: none;
+  }
 }
 
-.other__search-box-link-text {
-  font-size: 0.8rem;
-  margin-left: auto;
+.other__search-box-option {
+  background-color: #efefef;
+  color: #008080;
   cursor: pointer;
 }
 
-.other__search-box-input:focus {
+.other__search-box-select:focus {
   outline: 1px solid #008080;
 }
 
-.other__search-box-link-text:hover {
-  color: #008080;
-  transition: 0.3s ease-in-out;
+.other__search-box-option:hover {
+  background-color: #008080;
+  color: #efefef;
 }

@@ -20,7 +20,10 @@ function App() {
           <Route path="/parts" element={<Parts />} />
           <Route path="/results/make/:make" element={<ModelResults />} />
           <Route path="/results/type/:vehicletype" element={<TypeResults />} />
-          <Route path="/results/variables" element={<VariablesResults />} />
+          <Route
+            path="/results/other/:variable"
+            element={<VariablesResults />}
+          />
         </Routes>
       </main>
       <Footer />

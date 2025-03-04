@@ -4,7 +4,7 @@ type useFormProps = {
   make?: string;
   manufacturer?: string;
   vehicleType?: string;
-  search?: string;
+  variableValue?: string;
 };
 
 export function useForm(inputValues: useFormProps) {
@@ -12,6 +12,7 @@ export function useForm(inputValues: useFormProps) {
 
   const handleChange = (event: { target: { value: string; name: string } }) => {
     const { value, name } = event.target;
+    console.log(value, name);
 
     setValues({ ...values, [name]: value });
   };

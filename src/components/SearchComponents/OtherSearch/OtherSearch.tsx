@@ -1,60 +1,85 @@
-import { data, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "../../../hooks/useForm";
 import FormComponent from "../../FormComponent/FormComponent";
 
 import "./OtherSearch.css";
-import { getSearchVariables } from "../../../utils/api";
+import { getOtherSearch, getSearchVariables } from "../../../utils/api";
+import { SetStateAction, useEffect, useState } from "react";
+
+type searchVariableType = {
+  DataType: string;
+  Description: string;
+  GroupName: string;
+  ID: number;
+  Name: string;
+};
 
 function OtherSearch() {
-  // const { values, setValues, handleChange } = useForm({
-  //   make: "Select Make",
-  // });
+  const { values, setValues } = useForm({
+    variableValue: "",
+  });
+
+  const [variableValueArray, setVariableValueArray] = useState<[]>([]);
 
   const navigate = useNavigate();
 
-  // const handleOtherSearchSubmit = (e: { preventDefault: () => void }) => {
-  //   // e.preventDefault();
-  //   // if (values.make) {
-  //   //   getModelsOfMake(values.make.toLowerCase())
-  //   //     .then((data) => {
-  //   //       localStorage.setItem("make", data.SearchCriteria);
-  //   //       localStorage.setItem("models", JSON.stringify(data.Results));
-  //   //     })
-  //   //     .catch(console.error)
-  //   //     .finally(() => {
-  //   //       navigate(`/results/make/${values.make?.toLowerCase()}`);
-  //   //     });
-  //   // } else {
-  //   //   console.error("Unknown Make");
-  //   // }
-  // };
+  const onVariableValueChange = (e: {
+    target: { value: SetStateAction<string> };
+  }) => {
+    setValues({ variableValue: e.target.value as string });
+  };
 
-  const handleVariablesSearch = (e: { preventDefault: () => void }) => {
+  const handleOtherSearchSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    if (values.variableValue) {
+      getOtherSearch(values.variableValue.toLowerCase())
+        .then((data) => {
+          console.log(data);
+          localStorage.setItem("variable value", JSON.stringify(data.Results));
+        })
+        .catch(console.error)
+        .finally(() => {
+          navigate(`/results/other/${values.variableValue?.toLowerCase()}`);
+        });
+    } else {
+      console.error("Unknown search value");
+    }
+  };
+
+  useEffect(() => {
     getSearchVariables()
       .then((data) => {
-        console.log(data);
-        localStorage.setItem("Variables", JSON.stringify(data.Results));
+        setVariableValueArray(
+          data.Results.map((result: searchVariableType) => {
+            return result.Name;
+          })
+        );
       })
-      .catch(console.error)
-      .finally(() => {
-        navigate("/results/variables");
-      });
-  };
+      .catch(console.error);
+  }, []);
 
   return (
     <div className="other__search-box">
       <h2 className="other__search-box-title">Search Other Vehicle Details</h2>
       <div className="other__search-box-form">
-        <FormComponent name="other">
+        <FormComponent onSubmit={handleOtherSearchSubmit} name="other">
           <label className="other__search-box-label">
-            <input className="other__search-box-input" type="text" />
-            <span
-              onClick={handleVariablesSearch}
-              className="other__search-box-link-text"
+            <select
+              onChange={onVariableValueChange}
+              className="other__search-box-select"
+              name="type"
+              id="type"
             >
-              What can I search?
-            </span>
+              {variableValueArray.map((value, i) => (
+                <option
+                  className="manufacturer__search-box-option"
+                  key={i}
+                  value={value}
+                >
+                  {value}
+                </option>
+              ))}
+            </select>
           </label>
         </FormComponent>
       </div>

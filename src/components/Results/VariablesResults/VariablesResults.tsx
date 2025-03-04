@@ -4,8 +4,7 @@ import "./VariablesResults.css";
 import VariableCard from "../Cards/VariableCard/VariableCard";
 
 type VariablesResultsProps = {
-  Description: string;
-  GroupName: string;
+  ElementName: string;
   Name: string;
 };
 
@@ -13,7 +12,7 @@ function VariablesResults() {
   const [results, setResults] = useState<VariablesResultsProps[]>([]);
 
   useEffect(() => {
-    const variables = localStorage.getItem("Variables");
+    const variables = localStorage.getItem("variable value");
     setResults(variables ? JSON.parse(variables) : []);
   }, []);
 
@@ -23,8 +22,7 @@ function VariablesResults() {
         {results.map((variable, i) => (
           <VariableCard
             key={i}
-            description={variable.Description}
-            group={variable.GroupName}
+            element={variable.ElementName}
             name={variable.Name}
           />
         ))}
