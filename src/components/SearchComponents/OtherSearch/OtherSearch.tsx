@@ -34,7 +34,6 @@ function OtherSearch() {
     if (values.variableValue) {
       getOtherSearch(values.variableValue.toLowerCase())
         .then((data) => {
-          console.log(data);
           localStorage.setItem("variable value", JSON.stringify(data.Results));
         })
         .catch(console.error)

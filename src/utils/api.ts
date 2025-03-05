@@ -23,3 +23,7 @@ export const getOtherSearch = (searchInput: string) => {
 export const getSearchVariables = () => {
   return request(`${BASE_URL}/GetVehicleVariableList?format=json`);
 };
+
+export const getAllMakes = () => {
+  return request(`${BASE_URL}/GetAllMakes?format=json`);
+};

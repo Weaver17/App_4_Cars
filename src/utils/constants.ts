@@ -1,5 +1,7 @@
 export const BASE_URL = "https://vpic.nhtsa.dot.gov/api//vehicles/";
 
+export const ITEMS_PER_PAGE = 52;
+
 const handleServerResponse = (res: Response): Promise<any> => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
