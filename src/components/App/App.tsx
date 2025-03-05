@@ -8,6 +8,7 @@ import Parts from "../Parts/Parts";
 import ModelResults from "../Results/ModelResults/ModelResults";
 import TypeResults from "../Results/TypeResults/TypeResults";
 import VariablesResults from "../Results/VariablesResults/VariablesResults";
+import ManuResults from "../Results/ManuResults/ManuResults";
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
           <Route
             path="/results/other/:variable"
             element={<VariablesResults />}
+          />
+          <Route
+            path="/results/maufacturer/:manufacturer"
+            element={<ManuResults />}
           />
         </Routes>
       </main>

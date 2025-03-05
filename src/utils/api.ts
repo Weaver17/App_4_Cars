@@ -8,9 +8,9 @@ export const getMakesForType = (type: string) => {
   return request(`${BASE_URL}/GetMakesForVehicleType/${type}?format=json`);
 };
 
-export const getManufacutrer = (manufacturer: string) => {
+export const getMakesForManufacturer = (manufacturer: string) => {
   return request(
-    `${BASE_URL}/GetManufacturerDetails/${manufacturer}?format=json`
+    `${BASE_URL}/GetMakeForManufacturer/${manufacturer}?format=json`
   );
 };
 

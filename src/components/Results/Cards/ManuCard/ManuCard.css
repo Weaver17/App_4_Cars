@@ -1,4 +1,4 @@
-.type-card {
+.manu-card {
   padding: 1rem 2rem;
   width: 200px;
   display: flex;
@@ -12,7 +12,7 @@
   box-shadow: 4px 4px 4px #00000025;
 }
 
-.type-card__link {
+.manu-card__link {
   padding-bottom: 0.4rem;
   text-align: center;
   text-decoration: none;
@@ -21,15 +21,15 @@
   cursor: pointer;
 }
 
-.type-card__type {
+.manu-card__name {
   width: 100%;
   text-align: center;
   font-size: 14px;
-  color: #00000075;
+  color: #000000;
   border-top: 1px solid #02b0b0;
 }
 
-.type-card__link:hover {
+.manu-card__link:hover {
   color: #008080;
   transition: 0.3s ease-in-out;
 }

@@ -4,7 +4,7 @@ import { manufacturers } from "../../../utils/constants";
 import FormComponent from "../../FormComponent/FormComponent";
 import "./ManuBrowse.css";
 import { SetStateAction } from "react";
-import { getManufacutrer } from "../../../utils/api";
+import { getMakesForManufacturer } from "../../../utils/api";
 
 function ManuBrowse() {
   const { values, setValues } = useForm({
@@ -22,15 +22,15 @@ function ManuBrowse() {
   const handleManufacturerSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (values.manufacturer) {
-      getManufacutrer(values.manufacturer.toLowerCase())
+      getMakesForManufacturer(values.manufacturer.toLowerCase())
         .then((data) => {
-          console.log(data.Results);
-          // localStorage.setItem("make", data.SearchCriteria);
-          // localStorage.setItem("models", JSON.stringify(data.Results));
+          localStorage.setItem("make names", JSON.stringify(data.Results));
         })
         .catch(console.error)
         .finally(() => {
-          // navigate(`/results/make/${values.make?.toLowerCase()}`);
+          navigate(
+            `/results/maufacturer/${values.manufacturer?.toLowerCase()}`
+          );
         });
     } else {
       console.error("Unknown Manufacturer");
