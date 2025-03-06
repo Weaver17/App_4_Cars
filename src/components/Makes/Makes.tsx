@@ -58,53 +58,56 @@ function Makes() {
         });
 
         setMakes(sortedMakes);
+        setFilteredMakes(sortedMakes);
       })
       .catch(console.error);
   }, []);
 
   return (
     <section className="makes">
-      <h2 className="makes__title">All Makes</h2>
-      {/* Letter Filter */}
-      <div className="makes__letter-filter">
-        {letters.map((letter) => (
+      <div className="makes__wrapper">
+        <h2 className="makes__title">All Makes</h2>
+        {/* Letter Filter */}
+        <div className="makes__letter-filter">
+          {letters.map((letter) => (
+            <button
+              key={letter}
+              className={`makes__letter-btn ${
+                selectedLetter === letter ? "makes__letter-btn_active" : ""
+              }`}
+              onClick={() => handleLetterClick(letter)}
+            >
+              {letter}
+            </button>
+          ))}
           <button
-            key={letter}
-            className={`makes__letter-btn ${
-              selectedLetter === letter ? "makes__letter-btn_active" : ""
-            }`}
-            onClick={() => handleLetterClick(letter)}
+            className="makes__reset-btn"
+            type="button"
+            onClick={resetFilter}
           >
-            {letter}
+            Reset
           </button>
-        ))}
-        <button
-          className="makes__reset-btn"
-          type="button"
-          onClick={resetFilter}
-        >
-          Reset
-        </button>
-      </div>
-      <ul className="makes__list">
-        {paginatedMakes.map((make, i) => (
-          <MakesCard key={i} make={make.Make_Name} id={make.Make_ID} />
-        ))}
-      </ul>
+        </div>
+        <ul className="makes__list">
+          {paginatedMakes.map((make, i) => (
+            <MakesCard key={i} make={make.Make_Name} id={make.Make_ID} />
+          ))}
+        </ul>
 
-      {/* Pagination Controls */}
-      <div className="makes__pagination">
-        <button
-          className="makes__page-btn makes__page-btn_prev"
-          disabled={currentPage === 1}
-          onClick={() => setCurrentPage(currentPage - 1)}
-        ></button>
-        <span className="makes__page">Page {currentPage}</span>
-        <button
-          className="makes__page-btn makes__page-btn_next"
-          disabled={currentPage === totalPages}
-          onClick={() => setCurrentPage(currentPage + 1)}
-        ></button>
+        {/* Pagination Controls */}
+        <div className="makes__pagination">
+          <button
+            className="makes__page-btn makes__page-btn_prev"
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage(currentPage - 1)}
+          ></button>
+          <span className="makes__page">Page {currentPage}</span>
+          <button
+            className="makes__page-btn makes__page-btn_next"
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage(currentPage + 1)}
+          ></button>
+        </div>
       </div>
     </section>
   );
