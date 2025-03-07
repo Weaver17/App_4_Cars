@@ -7,6 +7,7 @@ import FormComponent from "../../FormComponent/FormComponent";
 
 import "./MnMSearch.css";
 
+// { title, valueType }
 function MnMSearch() {
   const { values, setValues } = useForm({
     make: "Select Make",

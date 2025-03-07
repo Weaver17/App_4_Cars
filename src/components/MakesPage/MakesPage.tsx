@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllMakes } from "../../utils/api";
 
-import "./Makes.css";
+import "./MakesPage.css";
 import MakesCard from "../MakesCard/MakesCard";
 import { ITEMS_PER_PAGE } from "../../utils/constants";
 

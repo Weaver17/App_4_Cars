@@ -16,5 +16,6 @@ export function useForm(inputValues: useFormProps) {
 
     setValues({ ...values, [name]: value });
   };
+
   return { values, handleChange, setValues };
 }

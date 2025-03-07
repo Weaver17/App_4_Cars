@@ -1,15 +1,15 @@
 .logo {
-  margin: 12px 0;
+  margin: 8px 0;
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 .logo__img {
-  height: 64px;
+  height: 48px;
 }
 
 .logo__title {
-  font-size: 60px;
-  line-height: 64px;
+  font-size: 48px;
+  line-height: 48px;
   color: #008080;
 }
