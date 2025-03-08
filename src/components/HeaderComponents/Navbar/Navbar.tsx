@@ -11,10 +11,10 @@ function Navbar() {
       <NavLink className="navbar__link" to="/makes">
         <p className="navbar__link-text">Makes</p>
       </NavLink>
-      <NavLink className="navbar__link" to="/parts">
+      <NavLink className="navbar__link" to="/manufacturers">
         <p className="navbar__link-text">Manufacuters</p>
       </NavLink>
-      <NavLink className="navbar__link" to="/parts">
+      <NavLink className="navbar__link" to="/part-details">
         <p className="navbar__link-text">Part Details</p>
       </NavLink>
     </nav>

@@ -1,8 +1,8 @@
-.type__search-box {
-  padding: 1rem 0 1rem 1rem;
+.search-card__box {
+  padding: 2rem 1rem 2rem 2rem;
   background-color: #ffffff99;
-  width: 500px;
-  height: 250px;
+  width: 700px;
+  height: 350px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -10,16 +10,16 @@
   box-shadow: 2px 4px 4px #00000025;
 }
 
-.type__search-box-title {
+.search-card__title {
   margin-bottom: 2rem;
   font-size: 2rem;
 }
 
-.type__search-box-form {
+.search-card__form {
   margin: 0 1rem 0 auto;
 }
 
-.type__search-box-label {
+.search-card__label {
   display: flex;
   gap: 0.4rem;
   justify-content: end;
@@ -28,10 +28,10 @@
   margin-left: 20px;
 }
 
-.type__search-box-select {
+.search-card__select {
   margin: 2rem 0 1.2rem;
   background: right 4% bottom 50% / contain no-repeat
-    url("../../../assets/Dropdown.svg") #fff;
+    url("../../assets/Dropdown.svg") #fff;
   background-size: 20px 20px;
   padding: 0.6rem;
   width: 250px;
@@ -46,17 +46,17 @@
   }
 }
 
-.type__search-box-option {
+.search-card__option {
   background-color: #efefef;
   color: #008080;
   cursor: pointer;
 }
 
-.type__search-box-select:focus {
+.search-card__select:focus {
   outline: 1px solid #008080;
 }
 
-.type__search-box-option:hover {
+.search-card__option:hover {
   background-color: #008080;
   color: #efefef;
 }
