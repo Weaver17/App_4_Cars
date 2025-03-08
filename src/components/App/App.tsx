@@ -12,6 +12,7 @@ import VehicleContextProvider from "../../contexts/VehicleContext";
 import ManuPage from "../ManuPage/ManuPage";
 import PartsPage from "../PartsPage/PartsPage";
 import PartsResults from "../Results/PartsResults/PartsResults";
+import MakesDetails from "../Results/MakesDetails/MakesDetails";
 
 function App() {
   return (
@@ -33,6 +34,10 @@ function App() {
             <Route
               path="/results/maufacturer/:manufacturer"
               element={<ManuResults />}
+            />
+            <Route
+              path="/results/make-details/:make"
+              element={<MakesDetails />}
             />
           </Routes>
         </main>

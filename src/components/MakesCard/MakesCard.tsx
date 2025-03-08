@@ -1,4 +1,5 @@
 import "./MakesCard.css";
+import useVehicleContext from "../../hooks/useVehicleContext";
 
 type MakesCardProps = {
   make: string;
@@ -6,9 +7,13 @@ type MakesCardProps = {
 };
 
 function MakesCard({ make, id }: MakesCardProps) {
+  const { handleTitleClick } = useVehicleContext();
+
   return (
     <li className="makes-card">
-      <h3 className="makes-card__make">{make}</h3>
+      <h3 className="makes-card__make" onClick={handleTitleClick}>
+        {make}
+      </h3>
       <span className="makes-card__id">{id}</span>
     </li>
   );

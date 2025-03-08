@@ -107,7 +107,3 @@
 .makes__page-btn:disabled {
   visibility: hidden;
 }
-
-.makes__wrapper::-webkit-scrollbar {
-  width: 0;
-}

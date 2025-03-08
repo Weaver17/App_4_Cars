@@ -27,3 +27,7 @@ export const getSearchVariables = () => {
 export const getAllMakes = () => {
   return request(`${BASE_URL}/GetAllMakes?format=json`);
 };
+
+export const getMakesDetails = (make: string) => {
+  return request(`${BASE_URL}/GetManufacturerDetails/${make}?format=json`);
+};

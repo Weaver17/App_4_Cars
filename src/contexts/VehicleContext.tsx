@@ -28,6 +28,7 @@ type TVehiclesContext = {
   handleOtherSearchSubmit: (e: { preventDefault: () => void }) => void;
   variableValueArray: [];
   setVariableValueArray: React.Dispatch<React.SetStateAction<[]>>;
+  handleTitleClick: (event: React.MouseEvent<HTMLHeadingElement>) => void;
 };
 
 export const VehicleContext = createContext<TVehiclesContext | null>(null);
@@ -117,6 +118,24 @@ function VehicleContextProvider({ children }: VehicleContextProviderProps) {
     }
   };
 
+  // MAKES DETAILS PAGE
+  const handleTitleClick = (event: React.MouseEvent<HTMLHeadingElement>) => {
+    const title = event.currentTarget.textContent;
+    const titleUrl = title?.replace(/\//g, "");
+    if (titleUrl) {
+      gameApi.getMakesDetails(titleUrl).then((data) => {
+        console.log(data);
+      });
+      // navigate(`/results/make-details/${titleUrl}?format=json`);
+    } else {
+      console.error("Unknown search value");
+    }
+  };
+
+  // const handleMakeClick = () => {
+  //   gameApi.getMakesDetails();
+  // };
+
   return (
     <VehicleContext.Provider
       value={{
@@ -128,6 +147,7 @@ function VehicleContextProvider({ children }: VehicleContextProviderProps) {
         handleOtherSearchSubmit,
         variableValueArray,
         setVariableValueArray,
+        handleTitleClick,
       }}
     >
       {children}
