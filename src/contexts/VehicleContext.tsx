@@ -124,7 +124,11 @@ function VehicleContextProvider({ children }: VehicleContextProviderProps) {
     const titleUrl = title?.replace(/\//g, "");
     if (titleUrl) {
       gameApi.getMakesDetails(titleUrl).then((data) => {
-        console.log(data);
+        console.log(data.Results);
+        data.Results.map((res: { Mfr_Name: string }) => {
+          // const nameArray = []
+          localStorage.setItem("makes-details names", res.Mfr_Name);
+        });
       });
       // navigate(`/results/make-details/${titleUrl}?format=json`);
     } else {
