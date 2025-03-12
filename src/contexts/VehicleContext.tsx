@@ -122,15 +122,15 @@ function VehicleContextProvider({ children }: VehicleContextProviderProps) {
   const handleTitleClick = (event: React.MouseEvent<HTMLHeadingElement>) => {
     const title = event.currentTarget.textContent;
     const titleUrl = title?.replace(/\//g, "");
+    const nameArray: string[] = [];
     if (titleUrl) {
       gameApi.getMakesDetails(titleUrl).then((data) => {
-        console.log(data.Results);
         data.Results.map((res: { Mfr_Name: string }) => {
-          // const nameArray = []
-          localStorage.setItem("makes-details names", res.Mfr_Name);
+          nameArray.push(res.Mfr_Name);
         });
+        localStorage.setItem("makes-details names", JSON.stringify(nameArray));
       });
-      // navigate(`/results/make-details/${titleUrl}?format=json`);
+      navigate(`/results/make-details/${titleUrl}?format=json`);
     } else {
       console.error("Unknown search value");
     }
